@@ -1,0 +1,273 @@
+@charset "utf-8";
+@use 'sass:math';
+@use 'setting' as *;
+
+
+
+//===================================================
+// common
+//===================================================
+
+br.sp{
+  @include mediaMin600{
+    display: none;
+  }
+}
+
+br.tab{
+  @include mediaMin1025{
+    display: none;
+  }
+}
+
+br.forPC{
+  @include mediaMax834{
+    display: none;
+  }
+}
+
+body {
+  font-family: var(--font-default);
+  color: var(--text-color);
+}
+
+a{
+  text-decoration: none;
+}
+
+// list
+
+ol.style-none,ul.style-none{
+  list-style: none;
+}
+
+.text-box{
+  ul,p{
+    line-height: 1.6;
+  }
+
+  p{
+    font-size: .875rem;
+    @include mediaMin1025{
+      font-size: 1rem;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+
+
+// text decoration ---------------------------------
+
+
+*.textBold{
+  font-weight: bold;
+}
+
+*.colorRed{
+  color: var(--color-red);
+}
+
+
+// 基本マーカー
+
+*.markerYel{
+  background-color: var(--marker-colorYe);
+}
+
+
+//---------------------------------------
+// Site Layout
+//---------------------------------------
+
+// mainの高さが小さい時もfooterを一番下に固定
+// ※サイト全体をwrapなどで囲む時は、bodyを".wrap"に変更すること
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 画面の高さいっぱいに広がるようにする */
+  margin: 0;
+}
+
+main {
+  flex-grow: 1; /* main の高さが小さい場合でも footer を下に固定する */
+}
+
+
+// container --------------------------------------
+
+header,main,footer{
+  width: 100%;
+  max-width: var(--fullWidth);
+  margin: 0 auto;
+}
+
+
+// -----------------------------------------
+// mailformpro のスタンダードなアレンジ。
+// フォント1rem,背景色無し
+
+form#mailformpro{
+
+  input, button, select, optgroup, textarea {
+    max-width: 100%;
+  }
+
+  dl{
+
+    @include mediaMin835{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    dt{
+      float: none;
+      width: 13rem;
+      margin: 0px;
+      padding: 0;
+      font-size: 1rem;
+      border-top: none;
+
+      @include mediaMin835{
+        margin-bottom: 2rem;
+      }
+
+      span{
+        font-weight: normal;
+        font-size: .75rem;
+      }
+
+    }
+    dd{
+      border-top: none;
+      margin: 0 0 2rem 0;
+      padding: 0;
+      font-size: 1rem;
+      text-align: left;
+      width: calc(100% - 15rem);
+      @include mediaMax834{
+        width: 100%;
+      }
+
+    }
+  }
+  div.mfp_buttons{
+    text-align: center;
+  }
+  @include mediaMax834{
+    dl{
+      dt{
+        float: none;
+        width: auto;
+        padding: .5rem;
+        text-align: left;
+      }
+      dd{
+        clear: both;
+        padding: .5rem 1rem;
+        line-height: 1.5;
+      }
+    }
+    div.mfp_buttons button {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.mfp_achroma,.mfp_colored{
+  background: none;
+}
+
+//- メールフォーム送信ボタン
+
+div.mfp_buttons{
+  button{
+    border:none;
+    text-shadow:0px 2px 2px rgba($color: #000, $alpha: .3);
+    box-shadow: 2px 2px 4px rgba($color: #000, $alpha: .3);
+    font-size: calc(1.125rem + 0.6vw);
+    color: #fff;
+    padding: 1rem 2rem;
+    background: var(--btn-colorBlue);
+    border-radius: 8px;
+  }
+}
+
+
+
+// ------------------------------------------
+// 共通 animation
+
+.animItem[data-animate="fade-in"] {
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+/* スライドイン */
+.animItem[data-animate="slide-in"] {
+  opacity: 0;
+  transition: all 0.8s ease;
+  transform: translateX(-50px);
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* スライドアップ */
+.animItem[data-animate="slide-up"] {
+  opacity: 0;
+  transition: all 0.8s ease;
+  transform: translateY(100px);
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animItem.active{
+  &.delay03{
+    transition-delay:0.3s;
+  }
+  &.delay06{
+    transition-delay:0.3s;
+  }
+  &.delay09{
+    transition-delay:0.3s;
+  }
+  @include mediaMin600{
+    &.delay03-pc{
+      transition-delay:0.3s;
+    }
+    &.delay06-pc{
+      transition-delay:0.6s;
+    }
+    &.delay09-pc{
+      transition-delay:0.9s;
+    }
+  }
+  @include mediaMax599{
+    &.delay03-sp{
+      transition-delay:0.3s;
+    }
+    &.delay06-sp{
+      transition-delay:0.6s;
+    }
+    &.delay09-sp{
+      transition-delay:0.9s;
+    }
+  }
+}
+
+
+
+

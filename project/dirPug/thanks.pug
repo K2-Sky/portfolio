@@ -1,0 +1,54 @@
+extends _layout
+
+block pass
+  - var fpass=""
+  - var lpass=""
+  - var page=""
+
+
+block mailform
+  link(rel="stylesheet", href=fpass+"contact/mfp.statics/mailformpro.css", type="text/css")
+
+block title
+  title 送信完了 | #{dataset.title}
+
+block hero
+  .hero-section.single-page
+    .hero-content
+      .h1-wrap
+        h1.hero-title
+          span.masked-text.masked-text01 CONTACT
+
+block main-contents
+
+    #contact
+    section.contact-section.section-contents.section-single-page
+      .section-contents--inner
+        .contact-h2.h-title-en.animItem(data-animate="fade-in")
+          h2.h2-long
+            |Message Received
+
+
+
+        .contact--contents-block
+          .information-text.thanks-text
+            .mfp_thanks
+              script(type="text/javascript" src="contact/mfp.statics/thanks.js")
+
+              .text-block
+                p
+                  |メッセージ送信が完了しました。
+                p
+                  |返信の必要がある内容に関しましては、下記時間帯での確認及び対応となります。
+                ul.schedule-list
+                  li
+                    span 平日
+                    |&emsp;10：00～19：00
+                  li
+                    span 土日・祝日
+                    |&emsp;11：00～17：00
+                p
+                  |※ メール対応は、上記スケジュール内にて行っております。即日での対応を前提としたお問い合わせにはお応えできかねますので、あらかじめご了承ください。
+
+            .return-home
+              a(href="./") HOME

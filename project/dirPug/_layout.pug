@@ -1,0 +1,137 @@
+include ./_lib
+
+doctype html
+html(lang="ja")
+  block pass
+  head
+    meta(charset="UTF-8")
+    block tag
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="referrer" content="no-referrer")
+    block title
+      title #{dataset.title}
+    block meta-description
+    block OGP
+    block mailform
+    block styleSheets
+      link(rel="stylesheet", href=fpass+"assets/css/reboot.css")
+      link(rel="stylesheet", href=fpass+"css/style.min.css")
+    block favicon
+      link(rel="shortcut icon" href=fpass+"favicon.ico")
+      link(rel="apple-touch-icon" href=fpass+"apple-touch-icon.png")
+    block canonical
+      meta(rel="canonical",href=dataset.url+page)
+    block analytics
+    block tag_media
+    block tag_media_thanks
+
+  body(class=bTag)
+    block body_tag
+    .wrapper
+      #sideMenu-btn
+        span
+        span
+        span
+      header
+
+        block header
+          .header-content.container-inner
+            .header-content--flex
+              .site-title
+                //- .icon
+                //-   img(src="images/icon-sample.svg", alt="")
+                .logo
+                  a(href=fpass+"./")
+                    img(src=fpass+"images/site-logo.svg", alt=dataset.title)
+              .header-inner--navi.gNav
+                ul.gNav--list.style-none
+                  each parent in menuList
+                    li.menu-item
+                      if parent.subCat
+                        a.col(href=lpass+parent.url)= parent.name_en
+                        ul.gNav--list--sub.style-none
+                          each sub in parent.subCat
+                            li.menu-item--sub
+                              a(href=lpass+sub.url)= sub.name
+                      else
+                        a.col(href=lpass+parent.url)= parent.name_en
+
+          #bgOverlay
+          .navCircle
+
+      main
+        block hero
+        block hero-contact-link
+        block main-contents
+        block page-footer-link
+        block return-to-top
+          a.returnToTop(href="#")
+            i.fa-solid.fa-circle-chevron-up
+            br
+            span.caption Scroll Up
+
+      footer.footer
+        .footer--inner.container-inner.column-flex
+          //- .footer-profile
+          //-   .footer-logo
+          //-     .logo-box
+          //-         img(src=fpass+"images/site-logo.svg", alt="")
+          //-   .prof-box
+          //-     ul
+          //-       li
+          //-         |#{dataset.office}
+          //-       li
+          //-         |東京都渋谷区ダミーA-123aa
+          //-       li
+          //-         |#{dataset.telno}
+          //- .footer-navigation.column-flex
+          //-     each parent in menuList
+          //-       if parent.subCat
+          //-         ul
+          //-           li
+          //-             a(href=parent.url)= parent.name_en
+
+          //-             each sub in parent.subCat
+          //-               li
+          //-                 a(href=sub.url)= sub.name
+          //-       else
+          //-         ul
+          //-           li
+          //-             a(href=parent.url)= parent.name_en
+          //- copyright
+          .footer--copyright
+            small
+              |&copy;
+              //- |<script type="text/javascript">document.write(new Date().getFullYear());</script>
+              //- |&nbsp;#{dataset.office} ALL RIGHTS RESERVED.
+              |2025<span id="year-extension" style="display: none;">–2025</span> &nbsp;#{dataset.office}
+
+
+    //- block jQuery
+    block copyright-js
+      script(type="text/javascript").
+        const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth(); // 0 = Jan, 11 = Dec
+
+        if (currentYear > 2025 || currentMonth === 11) {
+          const yearExtension = document.getElementById('year-extension');
+          yearExtension.textContent = `–${currentYear}`;
+          yearExtension.style.display = 'inline';
+        }
+
+    block light-box
+      //- <!-- VenoBox -->
+      //- link(rel="stylesheet", href=fpass+"assets/venobox/venobox.min.css")
+      //- script(src=fpass+"assets/venobox/venobox.min.js")
+    block javascript-footer
+      script(src=fpass+"js/function.min.js")
+    block font-load
+      //- <!--load all Font Awesome styles -->
+      link(href=fpass+"assets/css/all.css", rel="stylesheet")
+      //- <!-- Google Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    block iplog
+      //- MailFormProを使う場合のiplog用リンク
+      //- script(type="text/javascript",src=fpass+"order/iplogs/iplogs.cgi")

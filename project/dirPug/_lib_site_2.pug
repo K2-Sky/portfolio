@@ -1,0 +1,52 @@
+//- jsonと違ってpugで書くから、インデントを間違えるとエラーでるので注意！
+//-
+//- 連想配列を使う時の注意。
+//- 順番で呼び出したい時は[]で配列にする。
+//- keyで呼び出したい時は{}でオブジェクトにする。
+
+
+
+-
+  const siteList = [
+    {
+      title:'キャンプギア販売サイト',
+      siteName: 'siteA',
+      pageLink:'',
+      url: 'work/site-smp0001.html',
+      urlCaption:'公開サイト',
+      tags: ['Wordpress', 'カスタマイズデザイン','子テーマ制作'],
+      concept: '<p>※ 掲載情報は納品時のものと差し替えています。</p><p>Wordpress＋Inspiro（無料テーマ）をベースに、インストール型EC CUBEと連動できるよう子テーマを作成。</p><p>制作ツールはデザイン：Figma。写真の加工等はPhotoshop。構築：local by flywheel(現Local)。テストサーバーにてテスト→本番環境への引っ越しという段取りで納品。</p>',
+      capture:'images/my-work/expedition-elite_thumbnail.jpg',
+    },
+    {
+      title:'リアル店舗紹介サイト',
+      siteName: 'siteB',
+      pageLink:'',
+      url: 'work/site-smp0002.html',
+      urlCaption:'公開サイト',
+      tags: ['HTML+CSS', 'オリジナルデザイン','店舗紹介サイト'],
+      concept: '<p>※ 掲載情報・写真は納品時のものと差し替えています。</p><p>集客用ではなく、SNSや広告、営業時に信頼感を与える為の店舗紹介サイトを制作。誠実・信頼をテーマに作成。</p><p>制作ツールはデザイン：Figma。写真の加工等はPhotoshop。コーディング：Pug（旧Jade）/Sass（SCSS記法）。ファイル納品。</p>',
+      capture:'images/my-work/pure-orange_thumbnail.jpg',
+    },
+    {
+      title:'バナー制作',
+      siteName: 'スクリーンショット',
+      pageLink:'',
+      url: 'work/banner0929-ss.html',
+      urlCaption:'',
+      tags: ['商品バナー', 'Instagram','SNS'],
+      concept: '<p>※ 一部バナーは実際の商品とサンプル画像を差し替えています。</p><p>リンク用バナー、SNSの広告用バナー制作の一部。<br>商品のコンセプト・ターゲット層・顧客単価等をお伺いし、３～５パターンを制作します。</p><p>素材は有料素材、フリー素材、自作（追加料金）を案件により使い分けています。</p><p>制作ツールは主にFigma、Illustrator。写真素材がある場合は写真の加工等はPhotoshopにて行います。</p>',
+      capture:'images/my-work/banner-pc.jpg',
+    },
+    {
+      title:'紙媒体',
+      siteName: 'スクリーンショット',
+      pageLink:'',
+      url: 'work/flyer0930-ss.html',
+      urlCaption:'',
+      tags: ['チラシ', 'ポスター','資料'],
+      concept: '<p>※ 一部商品名、奥付及びQRコードはダミーテキストまたはモザイク処理を施しています。</p><p>サイト制作時に紙媒体でも広告をする案件については、WEB制作後にチラシやポスター等の制作も承ります。<br>※ 紙媒体用の高画質素材を用意できることが条件となります。<br>また、CMS納品時に必要であれば運営マニュアルも制作いたします（別料金）。</p><p>制作ツールはラフ：Figma、印刷用：Illustrator。写真素材がある場合は写真の加工等はPhotoshopにて行います。</p>',
+      capture:'images/my-work/flyer-thumbnail.jpg',
+    },
+  ];
+

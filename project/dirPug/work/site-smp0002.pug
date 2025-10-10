@@ -1,0 +1,35 @@
+extends ../_layout
+
+block pass
+  - var fpass="../"
+  - var lpass=""
+  - var page="site-smp0002.html"
+
+
+block title
+  title リアル店舗紹介サイト スクリーンショット
+
+block header
+
+block hero
+
+
+block main-contents
+
+  include _lib_site-page.pug
+  .main-contents.screenshot-page
+    .screenshot-container.bg-dark
+      .screenshot-img
+        picture
+          source(media="(max-width: 599px)" srcset="../images/my-work/pure-orange_sp.jpg 2x")
+          source(media="(max-width: 834px)" srcset="../images/my-work/pure-orange_pc.jpg 2x")
+          img(src="../images/my-work/pure-orange_pc.jpg", alt="リアル店舗紹介サイトのスクリーンショット")
+    .screenshot-page--footer
+      .return-home
+        a(href="../") HOME
+
+
+
+block return-to-top
+  //- TOPへ戻るボタンは消しておく
+

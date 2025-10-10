@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>送信完了 | K2 SKY</title>
+    <link rel="stylesheet" href="contact/mfp.statics/mailformpro.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/reboot.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta rel="canonical" href="https://k2-sky.com">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="sideMenu-btn"><span></span><span></span><span></span></div>
+      <header>
+        <div class="header-content container-inner">
+          <div class="header-content--flex">
+            <div class="site-title">
+              <div class="logo"><a href="./"><img src="images/site-logo.svg" alt="K2 SKY"></a></div>
+            </div>
+            <div class="header-inner--navi gNav">
+              <ul class="gNav--list style-none">
+                <li class="menu-item"><a class="col" href="/">Home</a>
+                </li>
+                <li class="menu-item"><a class="col" href="#portfolio">portfolio</a>
+                </li>
+                <li class="menu-item"><a class="col" href="#profile">profile</a>
+                </li>
+                <li class="menu-item"><a class="col" href="#contact">contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="bgOverlay"></div>
+        <div class="navCircle"></div>
+      </header>
+      <main>
+        <div class="hero-section single-page">
+          <div class="hero-content">
+            <div class="h1-wrap">
+              <h1 class="hero-title"><span class="masked-text masked-text01">CONTACT</span></h1>
+            </div>
+          </div>
+        </div>
+        <div id="contact"></div>
+        <section class="contact-section section-contents section-single-page">
+          <div class="section-contents--inner">
+            <div class="contact-h2 h-title-en animItem" data-animate="fade-in">
+              <h2 class="h2-long">Message Received</h2>
+            </div>
+            <div class="contact--contents-block">
+              <div class="information-text thanks-text">
+                <div class="mfp_thanks">
+                  <script type="text/javascript" src="contact/mfp.statics/thanks.js"></script>
+                  <div class="text-block">
+                    <p>メッセージ送信が完了しました。</p>
+                    <p>返信の必要がある内容に関しましては、下記時間帯での確認及び対応となります。</p>
+                    <ul class="schedule-list">
+                      <li><span>平日</span>&emsp;10：00～19：00</li>
+                      <li><span>土日・祝日</span>&emsp;11：00～17：00</li>
+                    </ul>
+                    <p>※ メール対応は、上記スケジュール内にて行っております。即日での対応を前提としたお問い合わせにはお応えできかねますので、あらかじめご了承ください。</p>
+                  </div>
+                </div>
+                <div class="return-home"><a href="./">HOME</a></div>
+              </div>
+            </div>
+          </div>
+        </section><a class="returnToTop" href="#"><i class="fa-solid fa-circle-chevron-up"></i><br><span class="caption">Scroll Up</span></a>
+      </main>
+      <footer class="footer">
+        <div class="footer--inner container-inner column-flex">
+          <div class="footer--copyright"><small>
+              &copy;
+              2025<span id="year-extension" style="display: none;">–2025</span> &nbsp;K2 SKY</small></div>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript">
+      const currentYear = new Date().getFullYear();
+      const currentMonth = new Date().getMonth(); // 0 = Jan, 11 = Dec
+      
+      if (currentYear > 2025 || currentMonth === 11) {
+        const yearExtension = document.getElementById('year-extension');
+        yearExtension.textContent = `–${currentYear}`;
+        yearExtension.style.display = 'inline';
+      }
+      
+    </script>
+    <script src="js/function.min.js"></script>
+    <link href="assets/css/all.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+  </body>
+</html>

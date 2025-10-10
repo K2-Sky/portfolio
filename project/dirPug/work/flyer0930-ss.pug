@@ -1,0 +1,35 @@
+extends ../_layout
+
+block pass
+  - var fpass="../"
+  - var lpass=""
+  - var page="banner0929-ss.html"
+
+
+block title
+  title 紙媒体 スクリーンショット
+
+block header
+
+block hero
+
+
+block main-contents
+
+  include _lib_site-page.pug
+  .main-contents.screenshot-page
+    .screenshot-container.bg-dark
+      .screenshot-img
+        picture
+          source(media="(max-width: 599px)" srcset="../images/my-work/flyer-sp.jpg 2x")
+          source(media="(max-width: 834px)" srcset="../images/my-work/flyer-pc.jpg 2x")
+          img(src="../images/my-work/flyer-pc.jpg", alt="紙媒体 制作物のスクリーンショット")
+    .screenshot-page--footer
+      .return-home
+        a(href="../") HOME
+
+
+
+block return-to-top
+  //- TOPへ戻るボタンは消しておく
+

@@ -1,0 +1,35 @@
+extends ../_layout
+
+block pass
+  - var fpass="../"
+  - var lpass=""
+  - var page="site-smp0001.html"
+
+
+block title
+  title キャンプギア販売サイト スクリーンショット
+
+block header
+
+block hero
+
+
+block main-contents
+
+  include _lib_site-page.pug
+  .main-contents.screenshot-page
+    .screenshot-container.bg-dark
+      .screenshot-img
+        picture
+          source(media="(max-width: 599px)" srcset="../images/my-work/expedition-elite_sp.jpg 2x")
+          source(media="(max-width: 834px)" srcset="../images/my-work/expedition-elite_pc.jpg 2x")
+          img(src="../images/my-work/expedition-elite_pc.jpg", alt="キャンプギア販売サイトのスクリーンショット")
+    .screenshot-page--footer
+      .return-home
+        a(href="../") HOME
+
+
+
+block return-to-top
+  //- TOPへ戻るボタンは消しておく
+

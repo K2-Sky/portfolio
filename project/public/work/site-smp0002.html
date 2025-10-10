@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>リアル店舗紹介サイト スクリーンショット</title>
+    <link rel="stylesheet" href="../assets/css/reboot.css">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta rel="canonical" href="https://k2-sky.comsite-smp0002.html">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="sideMenu-btn"><span></span><span></span><span></span></div>
+      <header>
+      </header>
+      <main>
+        <div class="main-contents screenshot-page">
+          <div class="screenshot-container bg-dark">
+            <div class="screenshot-img">
+              <picture>
+                <source media="(max-width: 599px)" srcset="../images/my-work/pure-orange_sp.jpg 2x">
+                <source media="(max-width: 834px)" srcset="../images/my-work/pure-orange_pc.jpg 2x"><img src="../images/my-work/pure-orange_pc.jpg" alt="リアル店舗紹介サイトのスクリーンショット">
+              </picture>
+            </div>
+          </div>
+          <div class="screenshot-page--footer">
+            <div class="return-home"><a href="../">HOME</a></div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer--inner container-inner column-flex">
+          <div class="footer--copyright"><small>
+              &copy;
+              2025<span id="year-extension" style="display: none;">–2025</span> &nbsp;K2 SKY</small></div>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript">
+      const currentYear = new Date().getFullYear();
+      const currentMonth = new Date().getMonth(); // 0 = Jan, 11 = Dec
+      
+      if (currentYear > 2025 || currentMonth === 11) {
+        const yearExtension = document.getElementById('year-extension');
+        yearExtension.textContent = `–${currentYear}`;
+        yearExtension.style.display = 'inline';
+      }
+      
+    </script>
+    <script src="../js/function.min.js"></script>
+    <link href="../assets/css/all.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+  </body>
+</html>

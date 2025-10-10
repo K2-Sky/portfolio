@@ -1,0 +1,288 @@
+extends _layout
+
+block pass
+  - var fpass=""
+  - var lpass=""
+  - var page=""
+
+prepend styleSheets
+  link(rel="stylesheet", href="splide/css/splide.min.css")
+
+block mailform
+  link(rel="stylesheet", href=fpass+"contact/mfp.statics/mailformpro.css", type="text/css")
+
+
+
+
+block hero
+  .hero-section
+    .hero-content
+      .h1-wrap
+        h1.hero-title
+          span.masked-text.masked-text01 CRAFTING
+          span.masked-text.masked-text02  WEB
+          span.masked-text.masked-text03  STORIES.
+
+block main-contents
+
+  .main-contents
+    #portfolio
+
+    include _lib_site_2.pug
+    section.portfolio-section.section-contents
+      .portfolio-contents.section-contents--inner
+        .portfolio-title--area
+          .portfolio-title--circle
+          .portfolio-h2.h-title-en.animItem(data-animate="fade-in").delay03
+            h2
+              |Portfolio
+        section.splide(aria-label="portfolio-list--splide")
+          .portfolio-list.splide__track.animItem(data-animate="slide-up")
+            ul.splide__list
+              each parent in siteList
+                li.splide__slide
+                  .splide--contents-block
+                    .information-block
+                      .h3-wrap
+                        h3= parent.title
+                      .site-block
+                        //-ul
+                          li.site-name= parent.siteName
+
+                          li.site-url
+                            a(href=parent.url,rel="noreferrer",referrerpolicy="no-referrer")= parent.urlCaption
+                              i.fa-solid.fa-arrow-up-right-from-square
+                        .tag-flex
+                          each tag in parent.tags
+                            span.tag= tag
+
+                      .h3-wrap.concept-title
+                          h3 制作スタイル
+                      .concept-block!= parent.concept
+                      //- .portfolio-detailPage-link
+                      //-   a(href=fpass+'work/'+parent.pageLink)
+                      //-     |more...
+
+                    .capture-block
+                      figure
+                        a(href=parent.url)
+                          img(src=parent.capture, alt=parent.siteName)
+
+        .note-portfolio-section
+          p
+            |本ポートフォリオに掲載している制作物は、GitHub上にてソースコードおよび開発環境を公開しているため、一部をダミーデータに差し替えております。
+            br
+            |また、使用している画像等の素材につきましても、著作権フリーのもの、または商用利用可能な素材配信サービスを通じて適切な利用条件のもと一部画像を差し替えております。
+
+    #profile
+    section.profile-section.section-contents
+      .section-contents--inner
+        .profile-h2.h-title-en.animItem(data-animate="fade-in")
+          h2
+            |Profile
+
+        .profile--contents-block
+          .profile-icon.animItem(data-animate="slide-up")
+            figure
+              img(src="images/k2-icon.png", alt="")
+            .note
+              p
+                |好奇心旺盛で新しいものに触れることが好きです。
+                br
+                |同時に、シンプルでクラシックなものが持つ機能的な美も素敵だと思っています。
+              p
+                |この2つを軸に、流行を取り入れながら、長く使えるものづくりを心がけています。
+              .name
+                |K2
+          .profile-note
+            dl.animItem(data-animate="slide-up").delay03-pc
+              dt
+                h3 経歴
+              dd
+                .history 2003-2005
+                p
+
+                  |大学の授業でHTML・C言語に触れ、WEB制作という職に憧れバイトにて旅行会社のWEB制作部門に就く。
+
+                .history 2005-2008
+                p
+                  |前職の上司の紹介により、服飾関連の会社に新設されたWEB制作部署に転職。
+                p
+                  |サイトデザインからコーディング、制作したサイトの運用まで、WEB制作の一連の作業に通して関わることが可能となり、スキルを磨く。
+                .history 2008-2009
+                p
+                  |WEBデザイナー兼コーダーとして通販サイトを運営する会社に転職。
+                p
+                  |WEB制作だけの予定が、メルマガ制作、広告用バナー制作、商品パッケージ制作、LP制作、商品仕入れ及び売上分析を担当することとなり、ショップサイト運営の大半について学ぶ機会を得る。
+                .history 2009-2022
+                p
+                  |前職の上司の紹介によりWEB制作会社に転職。
+                p
+                  |１つのサイトをデザイン（UI含む）から最終的な納品まで全て担当する方針の会社であったため、デザインからコーディング、マニュアル制作、広告用の紙媒体デザイン等も幅広く担当。
+                .history 2022-
+                p
+                  |2020年からのテレワーク勤務を経て、フリーランス形態に切り替えて活動。
+
+            dl.animItem(data-animate="slide-up").delay03-pc
+              dt
+                h3 対応技術
+              dd
+                ul
+                  li
+                    |HTML/CSS 歴：20年以上
+                  li
+                    |Pug（旧Jade）/Sass（SCSS記法） 歴：10年以上
+
+                  li
+                    |JavaScript,PHP 歴：15年以上
+                    br
+                    span.skill-note--js
+                      |※ いずれも一般的なWeb制作に必要な範囲に限定した実装経験です。
+                      br
+                      |専門的な開発領域は対象外ですが、装飾的な演出やUI補助には柔軟に対応できます。
+
+                .skill-note--realworld
+                  p
+                    |※年数は実務での使用経験に限定して記載しています。
+            dl.animItem(data-animate="slide-up").delay03-pc
+              dt
+                h3 使用ツール
+
+              dd
+                ul
+                  li
+                    |VSCode（Gulpにより自動化） 歴：10年以上
+                  li
+                    |Figma 歴：2年以上
+                  li
+                    |Photoshop、Illustrator 歴：20年以上
+                  li
+                    |Premiere Pro 歴：1年
+
+                .skill-note--realworld
+                  p
+                    |※年数は実務での使用経験に限定して記載しています。
+            .note-block.animItem(data-animate="slide-up").delay03-pc
+              p
+                |本サイトの構成、タスク管理、PugおよびSass（SCSS記法）の実装方法、使用しているJavaScriptの詳細については、GitHubにてソースコードおよび開発環境を公開しています。
+                br
+                |技術的な検証や設計方針の確認をご希望の方は、ご参照ください。
+              .github-link
+                a(href="#")
+                  |GitHub ｜ K2-SKY ソースコード公開
+
+    #contact
+    section.contact-section.section-contents
+      .section-contents--inner
+        .contact-h2.h-title-en.animItem(data-animate="fade-in")
+          h2
+            |CONTACT
+
+
+        .contact--contents-block.flex-box
+          .information-text
+            p
+              |返信の必要があるものに関しては、
+              br.forPC
+              |下記時間帯に対応いたします。
+            ul.schedule-list
+              li
+                span 平日
+                |&emsp;10：00～19：00
+              li
+                span 土日・祝日
+                |&emsp;11：00～17：00
+            ul.notes-list
+              li
+                |※ メール対応は、上記スケジュール内にて行っております。
+                br
+                |即日での対応を前提としたお問い合わせにはお応えできかねますので、あらかじめご了承ください。
+              li
+                |※ 長期休暇中など、返信が可能であっても作業対応ができない場合がございます。
+                br
+                |スケジュールは「メール対応可能な時間帯」の目安としてご参照ください。
+              li
+                |※ 新規案件につきましては、平日納品のみお受けしております。
+                br
+                |継続案件または事前にスケジュール調整済みの場合に限り、土日祝日の納品も対応可能です。
+
+          .contact-form
+
+            form#mailformpro(action="contact/mailformpro/mailformpro.cgi", method="post")
+              dl.mailform
+                dt.mfp
+                  .mfp_rows
+                    span.sup Name
+                    |お名前
+                dd.mfp
+                  .mfp_rows
+                    .mfp_col10
+                      input(type="text", name="お名前", size="30")
+
+                dt.mfp
+                  .mfp_rows
+                    span.sup email
+                    span.form-must 必須）
+                    |メールアドレス
+
+                dd.mfp
+                  .mfp_rows
+                    .mfp_col10
+                      input(type="email", data-type="email", name="email", size="40", required="required")
+                dt.mfp
+                  .mfp_rows
+                    span.sup subject
+                    |件名
+                dd.mfp
+                  .mfp_rows
+                    .mfp_col10
+                      input(type="text", name="件名", size="30")
+                dt.mfp
+                  .mfp_rows
+                    span.sup Message
+                    |メッセージ
+                dd.mfp
+                  .mfp_rows
+                    .mfp_col10
+                      textarea(rows="4" cols="40" placeholder="お問い合わせ内容をご記入ください")
+
+              .privacy-policy
+
+                ul
+                  li 当サイトでは、お問い合わせフォームを通じて取得した氏名・メールアドレス等の個人情報を、返信対応の目的以外には利用いたしません。
+                  li 取得した情報は適切に管理し、第三者に提供することはありません。削除のご希望があった場合には速やかに対応いたします。
+                  li Cookieやコンバージョンタグ等を用いた閲覧者情報の収集は行っておりません。
+
+
+
+
+
+              .mfp_buttons
+                button(type="submit")
+                  |Send&emsp;
+                  <svg width="61" height="19" viewBox="0 0 61 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 11H58.5L42 1V19" stroke="#00A7C8"/></svg>
+
+            script#mfpjs(type="text/javascript" ,src="contact/mailformpro/mailformpro.cgi")
+
+
+
+append javascript-footer
+  script(src="splide/js/splide.min.js")
+  //- script(src="splide/js/splide-extension-wheel.min.js")
+  script.
+    var splide = new Splide('.splide', {
+      direction: 'ttb', // 縦方向にスクロール
+      height: '33rem', // 初期化時のベース。調整はCSSで
+      focus: 'center',
+      wheel: true,
+      waitForTransition: true, // 推奨（連続スクロールを防ぐ）
+      wheelSleep: 200, // 任意：スクロール間隔（ms）
+    });
+
+    splide.on('mounted', () => {
+      if (splide.options.direction === 'ttb') {
+        splide.root.classList.add('ttb-adjusted');
+      }
+    });
+
+    splide.mount();
