@@ -33,14 +33,14 @@
 ## ディレクトリ構成（抜粋）
 
 project/
-├─ dirPug/ #一般的にはsrcフォルダ。私の旧作業環境に合わせたフォルダ名にしています。
-│ ├─ *.pug # Pug ファイル
-│ ├─ css/ # SCSS ファイル
-│ └─ js/ # JavaScript
-├─ public/ # 出力先（本番用・一般的にはdistフォルダ）
-├─ gulpfile.mjs # Gulp 設定
-│ ├─ task/ #各設定ファイル
-└─ package.json # Node.js 設定
+├─ dirPug/ #一般的にはsrcフォルダ。私の旧作業環境に合わせたフォルダ名にしています。  
+│ ├─ *.pug # Pug ファイル  
+│ ├─ css/ # SCSS ファイル  
+│ └─ js/ # JavaScript  
+├─ public/ # 出力先（本番用・一般的にはdistフォルダ）  
+├─ gulpfile.mjs # Gulp 設定  
+│ ├─ task/ #各設定ファイル  
+└─ package.json # Node.js 設定  
 
 dirPug内はフォルダ名もそのままpublicに書き出されるようにしています。  
 
@@ -90,3 +90,4 @@ K2 Skyでは積極的に運営・更新はしないけれど長期的に使え�
 
 - Font Awesome Free（CC BY 4.0）  
   [https://fontawesome.com/](https://fontawesome.com/)
+
