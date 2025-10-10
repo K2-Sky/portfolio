@@ -32,7 +32,7 @@
 
 ## ディレクトリ構成（抜粋）
 
-project/
+project/  
 ├─ dirPug/ #一般的にはsrcフォルダ。私の旧作業環境に合わせたフォルダ名にしています。  
 │ ├─ *.pug # Pug ファイル  
 │ ├─ css/ # SCSS ファイル  
@@ -90,4 +90,5 @@ K2 Skyでは積極的に運営・更新はしないけれど長期的に使え�
 
 - Font Awesome Free（CC BY 4.0）  
   [https://fontawesome.com/](https://fontawesome.com/)
+
 
