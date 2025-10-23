@@ -217,7 +217,7 @@
                   </dl>
                   <div class="note-block animItem delay03-pc" data-animate="slide-up">
                     <p>本サイトの構成、タスク管理、PugおよびSass（SCSS記法）の実装方法、使用しているJavaScriptの詳細については、GitHubにてソースコードおよび開発環境を公開しています。<br>技術的な検証や設計方針の確認をご希望の方は、ご参照ください。</p>
-                    <div class="github-link"><a href="#">GitHub ｜ K2-SKY ソースコード公開</a></div>
+                    <div class="github-link"><a href="https://github.com/K2-Sky/portfolio" target="_blank">GitHub ｜ K2-SKY ソースコード公開</a></div>
                   </div>
                 </div>
               </div>
@@ -281,7 +281,7 @@
                       <dd class="mfp">
                         <div class="mfp_rows">
                           <div class="mfp_col10">
-                            <textarea rows="4" cols="40" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                            <textarea rows="4" cols="40" name="問い合わせ内容" placeholder="お問い合わせ内容をご記入ください"></textarea>
                           </div>
                         </div>
                       </dd>
@@ -316,13 +316,13 @@
     <script type="text/javascript">
       const currentYear = new Date().getFullYear();
       const currentMonth = new Date().getMonth(); // 0 = Jan, 11 = Dec
-      
+
       if (currentYear > 2025 || currentMonth === 11) {
         const yearExtension = document.getElementById('year-extension');
         yearExtension.textContent = `–${currentYear}`;
         yearExtension.style.display = 'inline';
       }
-      
+
     </script>
     <script src="js/function.min.js"></script>
     <script src="splide/js/splide.min.js"></script>
@@ -335,13 +335,13 @@
         waitForTransition: true, // 推奨（連続スクロールを防ぐ）
         wheelSleep: 200, // 任意：スクロール間隔（ms）
       });
-      
+
       splide.on('mounted', () => {
         if (splide.options.direction === 'ttb') {
           splide.root.classList.add('ttb-adjusted');
         }
       });
-      
+
       splide.mount();
     </script>
     <link href="assets/css/all.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
